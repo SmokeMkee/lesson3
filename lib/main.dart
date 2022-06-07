@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lesson3/auth_screen.dart';
 
+import 'generated/l10n.dart';
 import 'home_screen.dart';
 
 void main() {
@@ -25,6 +27,15 @@ class MyApp extends StatelessWidget {
             ),
       },
       initialRoute: '/auth_screen',
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      locale: const Locale('ru', 'RU'),
+      supportedLocales: S.delegate.supportedLocales,
+
     );
   }
 }
